@@ -43,9 +43,9 @@ namespace DialogueSystem
     public class Phrase
     {
         [SerializeField] private Speaker _speaker;
+        [SerializeField] private Sprite _sceneArt;
         [SerializeField] private string _textEn;
         [SerializeField] private string _textRu;
-        [SerializeField] private PortraitStates _speakerState;
         [SerializeField] private UnityEvent _actionsAfterPhrase = new UnityEvent();
 
         public string TextGet(Languages language)
@@ -60,11 +60,11 @@ namespace DialogueSystem
                 return _textEn;
             }
 
-            return "Text";
+            return _textEn;
         }
 
         public Speaker SpeakerGet => _speaker;
-        public PortraitStates SpeakerStateGet => _speakerState;
+        public Sprite SceneArtGet => _sceneArt;
         public UnityEvent ActionsAfterPhrase => _actionsAfterPhrase;
     }
     #endregion
@@ -98,19 +98,10 @@ namespace DialogueSystem
                 return _answerTextEn;
             }
 
-            return "Answer";
+            return _answerTextEn;
         }
 
         public UnityEvent AnswerActions => _answerActions;
     }
     #endregion
-
-    public enum PortraitStates
-    {
-        Neutral,
-        Happy,
-        Sad,
-        Angry,
-        Puzzled
-    }
 }

@@ -11,8 +11,6 @@ namespace DialogueSystem
     {
         [SerializeField] private string _nameEn;
         [SerializeField] private string _nameRu;
-        [SerializeField] private Sprite _sprite;
-        //[SerializeField] private SpriteLibraryAsset _portraitsLibrary;
 
         public string NameGet(Languages language)
         {
@@ -28,8 +26,5 @@ namespace DialogueSystem
 
             return "Name";
         }
-
-        public Sprite SpriteGet => _sprite;
-        //public SpriteLibraryAsset PortraitsLibraryGet => _portraitsLibrary;
     }
 }

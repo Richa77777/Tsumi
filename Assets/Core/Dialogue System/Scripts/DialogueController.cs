@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 using Localization;
 
@@ -17,18 +18,17 @@ namespace DialogueSystem
 
         [SerializeField] private TextMeshProUGUI _speakerName;
         [SerializeField] private TextMeshProUGUI _speakerText;
-        [SerializeField] private TextMeshProUGUI _speakerStateText;
-        [SerializeField] private Image _speakerPortrait;
+        [SerializeField] private Image _artField;
         [SerializeField] private AudioClip _typewriterSound;
 
         [SerializeField] private float _timeBtwnChars = 0.05f;
 
         private int _currentBranchIndex = 0;
+        private bool _skip = false;
         private Dialogue _currentDialogue;
+        private AudioSource _audioSource;
         private IEnumerator _playCurrentBranchCor;
         private IEnumerator _writePhraseCor;
-        private bool _skip = false;
-        private AudioSource _audioSource;
 
         public int CurrentBranchIndexGet => _currentBranchIndex;
         public Dialogue CurrentDialogue => _currentDialogue;
@@ -95,6 +95,7 @@ namespace DialogueSystem
             }
 
             _speakerText.text = "";
+            _speakerName.text = "";
         }
 
         public void EndDialogue()
@@ -169,37 +170,13 @@ namespace DialogueSystem
 
                 currentPhrase = currentBranch.PhrasesInBranchGet[currentPhraseIndex];
                 _speakerName.text = currentPhrase.SpeakerGet.NameGet(LanguageController.Instance.CurrentLanguageGet);
-                _speakerStateText.text = System.Enum.GetName(typeof(PortraitStates), currentPhrase.SpeakerStateGet);
+
+                if (currentPhrase.SceneArtGet != null)
+                {
+                    _artField.sprite = currentPhrase.SceneArtGet;
+                }
 
                 Languages currentLanguage = LanguageController.Instance.CurrentLanguageGet;
-
-                switch (currentPhrase.SpeakerStateGet)
-                {
-                    case PortraitStates.Neutral:
-                        _speakerStateText.text = currentLanguage == Languages.En ? "Neutral" : "Нейтральный";
-                        //_speakerPortrait.sprite = currentPhrase.SpeakerGet.PortraitsLibraryGet.GetSprite("Portraits", "Neutral");
-                        break;
-
-                    case PortraitStates.Happy:
-                        _speakerStateText.text = currentLanguage == Languages.En ? "Happy" : "Счастливый";
-                        //_speakerPortrait.sprite = currentPhrase.SpeakerGet.PortraitsLibraryGet.GetSprite("Portraits", "Happy");
-                        break;
-
-                    case PortraitStates.Sad:
-                        _speakerStateText.text = currentLanguage == Languages.En ? "Sad" : "Грустный";
-                        //_speakerPortrait.sprite = currentPhrase.SpeakerGet.PortraitsLibraryGet.GetSprite("Portraits", "Sad");
-                        break;
-
-                    case PortraitStates.Angry:
-                        _speakerStateText.text = currentLanguage == Languages.En ? "Angry" : "Сердитый";
-                        //_speakerPortrait.sprite = currentPhrase.SpeakerGet.PortraitsLibraryGet.GetSprite("Portraits", "Angry");
-                        break;
-
-                    case PortraitStates.Puzzled:
-                        _speakerStateText.text = currentLanguage == Languages.En ? "Puzzled" : "Озадаченный";
-                        //_speakerPortrait.sprite = currentPhrase.SpeakerGet.PortraitsLibraryGet.GetSprite("Portraits", "Puzzled");
-                        break;
-                }
 
                 if (_writePhraseCor != null) StopCoroutine(_writePhraseCor);
                 _writePhraseCor = WritePhraseCor(currentPhrase.TextGet(LanguageController.Instance.CurrentLanguageGet));
@@ -228,13 +205,7 @@ namespace DialogueSystem
                 {
                     string lastChar = text.ToCharArray()[i - 1].ToString();
 
-                    if (lastChar == ",")
-                    {
-                        yield return new WaitForSeconds(_timeBtwnChars * 3);
-                        continue;
-                    }
-
-                    else if (lastChar == "." || lastChar == "!" || lastChar == "?")
+                    if (lastChar == "," || lastChar == "." || lastChar == "!" || lastChar == "?")
                     {
                         yield return new WaitForSeconds(_timeBtwnChars * 5);
                         continue;
@@ -259,7 +230,10 @@ namespace DialogueSystem
         {
             if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.KeypadEnter) || Input.GetKeyUp(KeyCode.E))
             {
-                return true;
+                if (!EventSystem.current.IsPointerOverGameObject())
+                {
+                    return true;
+                }
             }
 
             return false;
