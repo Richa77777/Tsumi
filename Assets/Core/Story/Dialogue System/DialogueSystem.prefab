@@ -778,10 +778,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AnswerButton (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 3904383372751871173, guid: 39a64bf640dc04c4cba7ed9a0803ca5e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39a64bf640dc04c4cba7ed9a0803ca5e, type: 3}
 --- !u!224 &3601556805186026323 stripped
@@ -895,10 +891,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AnswerButton
       objectReference: {fileID: 0}
-    - target: {fileID: 3904383372751871173, guid: 39a64bf640dc04c4cba7ed9a0803ca5e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39a64bf640dc04c4cba7ed9a0803ca5e, type: 3}
 --- !u!114 &1332758598152743214 stripped
@@ -1011,10 +1003,6 @@ PrefabInstance:
     - target: {fileID: 3904383372751871173, guid: 39a64bf640dc04c4cba7ed9a0803ca5e, type: 3}
       propertyPath: m_Name
       value: AnswerButton (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3904383372751871173, guid: 39a64bf640dc04c4cba7ed9a0803ca5e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39a64bf640dc04c4cba7ed9a0803ca5e, type: 3}

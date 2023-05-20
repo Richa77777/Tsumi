@@ -123,6 +123,105 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &194758497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 194758500}
+  - component: {fileID: 194758499}
+  - component: {fileID: 194758498}
+  - component: {fileID: 194758501}
+  m_Layer: 0
+  m_Name: EventsOnStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &194758498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194758497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b77d05d0c18c6ec42b3d6d0f5139900e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogue: {fileID: 2000866254}
+  _currentBranchIndex: 0
+--- !u!114 &194758499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194758497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25e4346865e19f4aa77f55cfc93811b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 194758501}
+        m_TargetAssemblyTypeName: Fade.FadeCall, Assembly-CSharp
+        m_MethodName: CallFade
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 194758498}
+        m_TargetAssemblyTypeName: DialogueSystem.SetAndPlayDialogue, Assembly-CSharp
+        m_MethodName: PlayDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &194758500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194758497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &194758501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194758497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 794754f8c49f36346a9b4ef7c0100e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,8 +233,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420034}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -209,47 +306,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b77d05d0c18c6ec42b3d6d0f5139900e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dialogue: {fileID: 2000866254}
-  _currentBranchIndex: 0
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25e4346865e19f4aa77f55cfc93811b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _startEvents:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 519420033}
-        m_TargetAssemblyTypeName: DialogueSystem.SetAndPlayDialogue, Assembly-CSharp
-        m_MethodName: PlayDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &530377650
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +468,7 @@ RectTransform:
   m_Children:
   - {fileID: 1369412118}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -550,6 +606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2000866253}
   - component: {fileID: 2000866254}
+  - component: {fileID: 2000866255}
   m_Layer: 0
   m_Name: BeginDialogue
   m_TagString: Untagged
@@ -570,7 +627,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2000866254
 MonoBehaviour:
@@ -588,7 +645,8 @@ MonoBehaviour:
   - _phrasesInBranch:
     - _speaker: {fileID: 11400000, guid: 7d6c32d4e4c17d040bb4d12d35b75327, type: 2}
       _sceneArt: {fileID: 21300000, guid: f0ad7d4675c810a46a1cd9dcc3a1163e, type: 3}
-      _textEn: 
+      _textEn: '"Meet Tsumi - a charming and affectionate sweetheart who will brighten
+        up even your gloomiest day!"'
       _textRu: "\"\u041F\u043E\u0437\u043D\u0430\u043A\u043E\u043C\u044C\u0442\u0435\u0441\u044C
         \u0441 \u0426\u0443\u043C\u0438 - \u043E\u0431\u0430\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0439
         \u0438 \u043B\u0430\u0441\u043A\u043E\u0432\u043E\u0439 \u043E\u0447\u0430\u0440\u043E\u0432\u0430\u0448\u043A\u043E\u0439,
@@ -601,7 +659,8 @@ MonoBehaviour:
           m_Calls: []
     - _speaker: {fileID: 11400000, guid: 7d6c32d4e4c17d040bb4d12d35b75327, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: '"She can play the piano, write poetry, and even compose her own songs,
+        and she loves making new friends!"'
       _textRu: "\"\u041E\u043D\u0430 \u0443\u043C\u0435\u0435\u0442 \u0438\u0433\u0440\u0430\u0442\u044C
         \u043D\u0430 \u0444\u043E\u0440\u0442\u0435\u043F\u0438\u0430\u043D\u043E,
         \u043F\u0438\u0448\u0435\u0442 \u0441\u0442\u0438\u0445\u0438 \u0438 \u0434\u0430\u0436\u0435
@@ -614,7 +673,8 @@ MonoBehaviour:
           m_Calls: []
     - _speaker: {fileID: 11400000, guid: 7d6c32d4e4c17d040bb4d12d35b75327, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: '"Ask Tsumi to tell you her new poem, sing a famous tune, or give
+        you a compliment!"'
       _textRu: "\"\u041F\u043E\u043F\u0440\u043E\u0441\u0438\u0442\u0435 \u0426\u0443\u043C\u0438
         \u0440\u0430\u0441\u0441\u043A\u0430\u0437\u0430\u0442\u044C \u0435\u0451
         \u043D\u043E\u0432\u0443\u044E \u043F\u043E\u044D\u043C\u0443, \u043D\u0430\u043F\u0435\u0442\u044C
@@ -626,7 +686,8 @@ MonoBehaviour:
           m_Calls: []
     - _speaker: {fileID: 11400000, guid: 7d6c32d4e4c17d040bb4d12d35b75327, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: '"Want to perform a famous hit with her or spend time together? Then
+        hurry up!"'
       _textRu: "\"\u0425\u043E\u0442\u0438\u0442\u0435 \u0438\u0441\u043F\u043E\u043B\u043D\u0438\u0442\u044C
         \u0432\u043C\u0435\u0441\u0442\u0435 \u0441 \u043D\u0435\u0439 \u0438\u0437\u0432\u0435\u0441\u0442\u043D\u044B\u0439
         \u0445\u0438\u0442 \u0438\u043B\u0438 \u043F\u0440\u043E\u0432\u0435\u0441\u0442\u0438
@@ -637,7 +698,7 @@ MonoBehaviour:
           m_Calls: []
     - _speaker: {fileID: 11400000, guid: 7d6c32d4e4c17d040bb4d12d35b75327, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: '"Tsumi is exclusively available for purchase in our game for a week!"'
       _textRu: "\"\u0426\u0443\u043C\u0438 \u044D\u043A\u0441\u043A\u043B\u044E\u0437\u0438\u0432\u043D\u043E
         \u0434\u043E\u0441\u0442\u0443\u043F\u043D\u0430 \u0434\u043B\u044F \u043F\u043E\u043A\u0443\u043F\u043A\u0438
         \u0432 \u043D\u0430\u0448\u0435\u0439 \u0438\u0433\u0440\u0435 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
@@ -647,7 +708,7 @@ MonoBehaviour:
           m_Calls: []
     - _speaker: {fileID: 11400000, guid: 7d6c32d4e4c17d040bb4d12d35b75327, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: '"Become a friend to this cutie! Tsumi is waiting for you!"'
       _textRu: "\"\u0421\u0442\u0430\u043D\u044C \u0434\u0440\u0443\u0433\u043E\u043C
         \u0434\u043B\u044F \u044D\u0442\u043E\u0439 \u043C\u0438\u043B\u0430\u0448\u043A\u0438!
         \u0426\u0443\u043C\u0438 \u0436\u0434\u0451\u0442 \u0442\u0435\u0431\u044F!\""
@@ -669,14 +730,14 @@ MonoBehaviour:
   - _phrasesInBranch:
     - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
       _sceneArt: {fileID: 21300000, guid: 835d92aca8e11b948b94b99e80317200, type: 3}
-      _textEn: 
+      _textEn: Good morning, me.
       _textRu: "\u0414\u043E\u0431\u0440\u043E\u0435 \u0443\u0442\u0440\u043E, \u044F."
       _actionsAfterPhrase:
         m_PersistentCalls:
           m_Calls: []
     - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: My head hurts again because I slept late.
       _textRu: "\u041E\u043F\u044F\u0442\u044C \u0431\u043E\u043B\u0438\u0442 \u0433\u043E\u043B\u043E\u0432\u0430
         \u043E\u0442 \u0442\u043E\u0433\u043E, \u0447\u0442\u043E \u0443\u0441\u043D\u0443\u043B
         \u043F\u043E\u0437\u0434\u043D\u043E."
@@ -685,7 +746,7 @@ MonoBehaviour:
           m_Calls: []
     - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
       _sceneArt: {fileID: 21300000, guid: 14e98bf73640d0d4fb7779793cf02bcd, type: 3}
-      _textEn: 
+      _textEn: I looked at the clock.
       _textRu: "\u042F \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u043B \u043D\u0430
         \u0447\u0430\u0441\u044B."
       _actionsAfterPhrase:
@@ -706,7 +767,7 @@ MonoBehaviour:
   - _phrasesInBranch:
     - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: It's still just noon, phew.
       _textRu: "\u0415\u0449\u0451 \u0432\u0441\u0435\u0433\u043E \u043F\u043E\u043B\u0434\u0435\u043D\u044C,
         \u0444\u0443\u0445."
       _actionsAfterPhrase:
@@ -714,7 +775,8 @@ MonoBehaviour:
           m_Calls: []
     - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: I usually wake up in the evening and spend a lot of time in front
+        of the monitor.
       _textRu: "\u041E\u0431\u044B\u0447\u043D\u043E \u044F \u043F\u0440\u043E\u0441\u044B\u043F\u0430\u044E\u0441\u044C
         \u043F\u043E\u0434 \u0432\u0435\u0447\u0435\u0440 \u0438 \u043F\u0440\u043E\u0432\u043E\u0436\u0443
         \u043A\u0443\u0447\u0443 \u0432\u0440\u0435\u043C\u0435\u043D\u0438 \u043F\u0435\u0440\u0435\u0434
@@ -724,7 +786,8 @@ MonoBehaviour:
           m_Calls: []
     - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: In general, I live outside of time. I can't even remember the last
+        time I went outside.
       _textRu: "\u0412\u043E\u043E\u0431\u0449\u0435, \u044F \u0436\u0438\u0432\u0443
         \u0432\u043D\u0435 \u0432\u0440\u0435\u043C\u0435\u043D\u0438. \u0423\u0436\u0435
         \u0438 \u043D\u0435 \u043F\u043E\u043C\u043D\u044E, \u043A\u043E\u0433\u0434\u0430
@@ -735,17 +798,29 @@ MonoBehaviour:
           m_Calls: []
     - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: My only world is everything that's in this room.
       _textRu: "\u041C\u043E\u0439 \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
         \u043C\u0438\u0440 - \u0432\u0441\u0451, \u0447\u0442\u043E \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F
         \u0432 \u044D\u0442\u043E\u0439 \u043A\u043E\u043C\u043D\u0430\u0442\u0435."
       _actionsAfterPhrase:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 2000866254}
+            m_TargetAssemblyTypeName: DialogueSystem.Dialogue, Assembly-CSharp
+            m_MethodName: A_SetBranchIndexAndPlay
+            m_Mode: 3
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 4
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   - _phrasesInBranch:
     - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: It's already almost one in the afternoon, damn!
       _textRu: "\u0423\u0436\u0435 \u043F\u043E\u0447\u0442\u0438 \u0447\u0430\u0441
         \u0434\u043D\u044F, \u0447\u0451\u0440\u0442!"
       _actionsAfterPhrase:
@@ -753,15 +828,15 @@ MonoBehaviour:
           m_Calls: []
     - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: ...Wait, why am I thinking about this?
       _textRu: "...\u0425\u043E\u0442\u044F, \u0447\u0435\u0433\u043E \u044D\u0442\u043E
-        \u044F."
+        \u044F?"
       _actionsAfterPhrase:
         m_PersistentCalls:
           m_Calls: []
     - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: I still wake up pretty late, and there's nowhere to go.
       _textRu: "\u0412\u0441\u0435 \u0440\u0430\u0432\u043D\u043E \u044F \u0432\u0441\u0442\u0430\u044E
         \u0434\u043E\u0432\u043E\u043B\u044C\u043D\u043E \u043F\u043E\u0437\u0434\u043D\u043E,
         \u043D\u0438\u043A\u0443\u0434\u0430 \u0438\u0434\u0442\u0438 \u043D\u0435
@@ -771,7 +846,8 @@ MonoBehaviour:
           m_Calls: []
     - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: I live outside of time anyway, and I doubt I'll remember when was
+        the last time I was outside.
       _textRu: "\u042F \u0436\u0438\u0432\u0443 \u0432\u043D\u0435 \u0432\u0440\u0435\u043C\u0435\u043D\u0438,
         \u0434\u0430 \u0438 \u0432\u0440\u044F\u0434 \u043B\u0438 \u0432\u0441\u043F\u043E\u043C\u043D\u044E,
         \u043A\u043E\u0433\u0434\u0430 \u0432 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0439
@@ -781,16 +857,73 @@ MonoBehaviour:
           m_Calls: []
     - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
       _sceneArt: {fileID: 0}
-      _textEn: 
+      _textEn: My only world is everything that's in this room.
       _textRu: "\u041C\u043E\u0439 \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
         \u043C\u0438\u0440 - \u0432\u0441\u0451, \u0447\u0442\u043E \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F
         \u0432 \u044D\u0442\u043E\u0439 \u043A\u043E\u043C\u043D\u0430\u0442\u0435."
       _actionsAfterPhrase:
         m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2000866254}
+            m_TargetAssemblyTypeName: DialogueSystem.Dialogue, Assembly-CSharp
+            m_MethodName: A_SetBranchIndexAndPlay
+            m_Mode: 3
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 4
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - _phrasesInBranch:
+    - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
+      _sceneArt: {fileID: 0}
+      _textEn: By the way, what's this new girl in the game?
+      _textRu: "\u041A\u0441\u0442\u0430\u0442\u0438, \u0447\u0442\u043E \u0442\u0430\u043C
+        \u0437\u0430 \u043D\u043E\u0432\u0430\u044F \u0434\u0435\u0432\u043E\u0447\u043A\u0430
+        \u0432\u044B\u0448\u043B\u0430 \u0432 \u0438\u0433\u0440\u0435? "
+      _actionsAfterPhrase:
+        m_PersistentCalls:
           m_Calls: []
+    - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
+      _sceneArt: {fileID: 0}
+      _textEn: She looks so different from the others in my collection...
+      _textRu: "\u0421\u0442\u0440\u0430\u043D\u043D\u043E, \u043E\u043D\u0430 \u0441\u043E\u0432\u0441\u0435\u043C
+        \u043D\u0435\u043F\u043E\u0445\u043E\u0436\u0430 \u043D\u0430 \u0434\u0440\u0443\u0433\u0438\u0445
+        \u0438\u0437 \u043C\u043E\u0435\u0439 \u043A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u0438..."
+      _actionsAfterPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+    - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
+      _sceneArt: {fileID: 0}
+      _textEn: There's something special about her...
+      _textRu: "\u041A\u0430\u043A\u0430\u044F-\u0442\u043E \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u0430\u044F..."
+      _actionsAfterPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+    - _speaker: {fileID: 11400000, guid: 6484ff25a58aca348a8de4a4a6c61087, type: 2}
+      _sceneArt: {fileID: 0}
+      _textEn: I need her.
+      _textRu: "\u041E\u043D\u0430 \u043D\u0443\u0436\u043D\u0430 \u043C\u043D\u0435."
+      _actionsAfterPhrase:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2000866255}
+            m_TargetAssemblyTypeName: Fade.FadeCall, Assembly-CSharp
+            m_MethodName: CallFade
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
   _answerBlocks:
   - _answers:
-    - _answerTextEn: 
+    - _answerTextEn: It's still just noon, phew
       _answerTextRu: "\u0415\u0449\u0451 \u0432\u0441\u0435\u0433\u043E \u043F\u043E\u043B\u0434\u0435\u043D\u044C,
         \u0444\u0443\u0445."
       _answerActions:
@@ -808,9 +941,9 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-    - _answerTextEn: 
-      _answerTextRu: "\u201C\u0423\u0436\u0435 \u043F\u043E\u0447\u0442\u0438 \u0447\u0430\u0441
-        \u0434\u043D\u044F, \u0447\u0451\u0440\u0442!\u201D"
+    - _answerTextEn: It's already almost one in the afternoon, damn!
+      _answerTextRu: "\u0423\u0436\u0435 \u043F\u043E\u0447\u0442\u0438 \u0447\u0430\u0441
+        \u0434\u043D\u044F, \u0447\u0451\u0440\u0442!"
       _answerActions:
         m_PersistentCalls:
           m_Calls:
@@ -826,6 +959,18 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+--- !u!114 &2000866255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000866252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 794754f8c49f36346a9b4ef7c0100e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1919197920933391548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -839,35 +984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8919416018014855680, guid: a1be1ccec901d714e8e160e4dcf8bb1a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8919416018014855680, guid: a1be1ccec901d714e8e160e4dcf8bb1a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 967.9974
-      objectReference: {fileID: 0}
-    - target: {fileID: 8919416018014855680, guid: a1be1ccec901d714e8e160e4dcf8bb1a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 253.72694
-      objectReference: {fileID: 0}
-    - target: {fileID: 8919416018014855680, guid: a1be1ccec901d714e8e160e4dcf8bb1a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.6644202
-      objectReference: {fileID: 0}
-    - target: {fileID: 8919416018014855680, guid: a1be1ccec901d714e8e160e4dcf8bb1a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8919416018014855680, guid: a1be1ccec901d714e8e160e4dcf8bb1a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8919416018014855680, guid: a1be1ccec901d714e8e160e4dcf8bb1a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8919416018014855680, guid: a1be1ccec901d714e8e160e4dcf8bb1a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8919416018014855680, guid: a1be1ccec901d714e8e160e4dcf8bb1a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -900,7 +1017,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 5838925794859328173, guid: 37cb0f1e05d70f149a6f5a0ac5cb457f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5838925794859328173, guid: 37cb0f1e05d70f149a6f5a0ac5cb457f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -948,3 +1065,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37cb0f1e05d70f149a6f5a0ac5cb457f, type: 3}
+--- !u!1001 &6813525338303057747
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6813525338688598134, guid: 5a68371fcb847624b939865829bc15f7, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813525338688598134, guid: 5a68371fcb847624b939865829bc15f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813525338688598134, guid: 5a68371fcb847624b939865829bc15f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813525338688598134, guid: 5a68371fcb847624b939865829bc15f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813525338688598135, guid: 5a68371fcb847624b939865829bc15f7, type: 3}
+      propertyPath: m_Name
+      value: FadeController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5a68371fcb847624b939865829bc15f7, type: 3}

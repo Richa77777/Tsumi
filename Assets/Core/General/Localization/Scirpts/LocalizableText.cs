@@ -13,6 +13,31 @@ namespace Localization
         private TextMeshProUGUI _textMeshPro;
         private Coroutine _waitForLanguageControllerCor;
 
+        public string EnText 
+        { 
+            get 
+            { 
+                return _enText; 
+            }
+            set 
+            { 
+                _enText = value;
+                SetText(LanguageController.Instance.CurrentLanguageGet);
+            } 
+        }
+        public string RuText
+        {
+            get
+            {
+                return _ruText;
+            }
+            set
+            {
+                _ruText = value;
+                SetText(LanguageController.Instance.CurrentLanguageGet);
+            }
+        }
+
         private void Awake()
         {
             _textMeshPro = GetComponent<TextMeshProUGUI>();
