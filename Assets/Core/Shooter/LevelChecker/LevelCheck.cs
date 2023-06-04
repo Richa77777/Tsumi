@@ -18,8 +18,8 @@ public class LevelCheck : MonoBehaviour
         {
             int sceneNumber = int.Parse(match.Value);
 
-            _localizableText.EnText = "Level " + sceneNumber;
-            _localizableText.RuText = "Уровень " + sceneNumber;
+            _localizableText.EnText = "LVL " + sceneNumber;
+            _localizableText.RuText = "Ур. " + sceneNumber;
         }
     }
 }

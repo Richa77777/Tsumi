@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ccafcb695d1fd594dba482854b2a9152
+guid: 4048fc48c9fcd974da82620b39881f4b
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Undertale Battle Font
+  - Fifaks 1.0 dev1
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
