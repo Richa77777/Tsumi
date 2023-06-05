@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Bullet
+namespace BulletSpace
 {
     public class BulletsPool : MonoBehaviour
     {
@@ -11,7 +11,7 @@ namespace Bullet
         [SerializeField] private GameObject _bulletPrefab;
         [SerializeField] private int _poolLength;
 
-        private List<Bullet> _bulletsPool;
+        private List<Bullet> _bulletsPool = new List<Bullet>();
         public List<Bullet> BulletsPoolGet => _bulletsPool;
 
         private void Awake()
@@ -21,12 +21,14 @@ namespace Bullet
 
         private void AddBulletsInPool(GameObject prefab, int count)
         {
-            GameObject bullet;
+            Bullet bullet;
 
             for (int i = 0; i < count; i++)
             {
-                bullet = Instantiate(prefab, transform, true);
-                bullet.SetActive(false);
+                bullet = Instantiate(prefab, transform, true).GetComponent<Bullet>();
+                bullet.gameObject.SetActive(false);
+
+                _bulletsPool.Add(bullet);
             }
         }
     }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Bullet
+namespace BulletSpace
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class Bullet : MonoBehaviour
@@ -9,10 +9,13 @@ namespace Bullet
 
         private Rigidbody2D _rigidbody;
 
-        private void Start()
+        private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+        }
 
+        private void OnEnable()
+        {
             _rigidbody.velocity = new Vector3(0f, _speed, 0f);
         }
     }

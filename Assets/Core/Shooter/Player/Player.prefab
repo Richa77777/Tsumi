@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6933280116119574616}
   - component: {fileID: 6933280116119574619}
   - component: {fileID: 3808223136207414232}
+  - component: {fileID: 2965389351683369713}
   - component: {fileID: 6933280116119574618}
   - component: {fileID: 6933280116119574565}
   m_Layer: 0
@@ -62,8 +63,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 441e9174bb1c924418a0df64c1f11da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shootPoint: {fileID: 7077992221437178610}
   _bulletsPoolPrefab: {fileID: 4084651940490489994, guid: db9702d0c0bf9684c9479ca3ef072b0b, type: 3}
+  _reloadDuration: 0.75
+--- !u!114 &2965389351683369713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933280116119574617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99e5f20f7bbf9b4e9d0cf7a83d3abb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heartsPrefab: {fileID: 2885395067945193146, guid: ee7991e3f72bd714bbf1825a04dd2254, type: 3}
   _reloadingBarPrefab: {fileID: 6543332941963824039, guid: 7d6e85e267571b14b95722edba82f8c1, type: 3}
+  _victoryBarPrefab: {fileID: 8790418202859226902, guid: 269601b4e811e6b4a89c6efd488f4be4, type: 3}
 --- !u!61 &6933280116119574618
 BoxCollider2D:
   m_ObjectHideFlags: 0

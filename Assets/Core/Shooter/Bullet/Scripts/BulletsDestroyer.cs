@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Bullet
+namespace BulletSpace
 {
     public class BulletsDestroyer : MonoBehaviour
     {

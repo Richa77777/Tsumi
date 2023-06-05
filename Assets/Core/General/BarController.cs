@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ReloadingBar : MonoBehaviour
+public class BarController : MonoBehaviour
 {
-    private Image _image;
-    private Coroutine _setBarValueCor;
+    [SerializeField] private Image _barImage;
 
-    private void Start()
-    {
-        _image = GetComponent<Image>();
-    }
+    private Coroutine _setBarValueCor;
 
     public void SetBarValue(float value, float duration)
     {
@@ -27,15 +23,14 @@ public class ReloadingBar : MonoBehaviour
 
     private IEnumerator SetBarValueCor(float value, float duration)
     {
-        float currentBarValue = _image.fillAmount;
-        
+        float currentBarValue = _barImage.fillAmount;
+
         for (float time = 0; time < duration; time += Time.deltaTime)
         {
-            _image.fillAmount = Mathf.Lerp(currentBarValue, value, time / duration);
+            _barImage.fillAmount = Mathf.Lerp(currentBarValue, value, time / duration);
             yield return null;
         }
 
-        _image.fillAmount = value;
+        _barImage.fillAmount = value;
     }
 }
-
