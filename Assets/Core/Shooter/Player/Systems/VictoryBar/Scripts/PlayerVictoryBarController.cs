@@ -21,4 +21,3 @@ namespace Player.Systems
         }
     }
 }
-
