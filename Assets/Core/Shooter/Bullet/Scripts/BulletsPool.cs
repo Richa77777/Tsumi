@@ -12,7 +12,7 @@ namespace BulletSpace
         [SerializeField] private int _poolLength;
 
         private List<Bullet> _bulletsPool = new List<Bullet>();
-        public List<Bullet> BulletsPoolGet => _bulletsPool;
+        public List<Bullet> BulletsPoolGet => new List<Bullet>(_bulletsPool);
 
         private void Awake()
         {

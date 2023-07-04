@@ -14,14 +14,16 @@ namespace Player
         [SerializeField] private float _reloadDuration = 0.75f;
 
         private PlayerSystemsInitializer _playerSystems;
-        private BulletsPool _bulletsPool;
+        private BulletsPool _bulletsPoolComponent;
 
         private bool _canShoot = true;
+
+        public BulletsPool BulletsPoolComponentGet => _bulletsPoolComponent;
 
         private void Start()
         {
             _playerSystems = GetComponent<PlayerSystemsInitializer>();
-            _bulletsPool = Instantiate(_bulletsPoolPrefab).GetComponent<BulletsPool>();
+            _bulletsPoolComponent = Instantiate(_bulletsPoolPrefab).GetComponent<BulletsPool>();
         }
 
         private void Update()
@@ -38,11 +40,11 @@ namespace Player
             {
                 Bullet bullet = null;
 
-                for (int i = 0; i < _bulletsPool.BulletsPoolGet.Count; i++)
+                for (int i = 0; i < _bulletsPoolComponent.BulletsPoolGet.Count; i++)
                 {
-                    if (_bulletsPool.BulletsPoolGet[i].gameObject.activeInHierarchy == false)
+                    if (_bulletsPoolComponent.BulletsPoolGet[i].gameObject.activeInHierarchy == false)
                     {
-                        bullet = _bulletsPool.BulletsPoolGet[i];
+                        bullet = _bulletsPoolComponent.BulletsPoolGet[i];
                         break;
                     }
                 }
